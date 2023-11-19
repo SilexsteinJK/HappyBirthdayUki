@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BdayUki</title>
+</head>
+<body>
+
+  
+  
+  <div class="sentence"></div>
+
+
+<a href="https://silexsteinjk.github.io/happybirthday/indexcard.html.html
+"><button style="background-color: lightgreen;margin-top:200px ;position: absolute;font-size: 20px;color: darkred;font-weight: 900;">OPEN YOUR CARD</button></a>
+
+
+<style type="text/css">
+
+  a{
+
+    position: absolute;
+  }
+  
+  html, body {
+      height: 100%;
+      margin: 0;
+      font-family: monospace;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background-color: black;
+      overflow: hidden;
+    }
+
+    .sentence {
+      color: #48fb47;
+      font-size: 3em;
+      position: relative;
+    }
+
+
+.sentence::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  bottom: 6px;
+    width: 14px;
+    height: 2px;
+  background-color: #DAFDBA;
+  animation: blink 0.5s linear infinite;
+}
+
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+</style>
+
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+  const sentences = [
+    'Wait ',
+    'Dont click on ( Open your card ) now',
+    'Hear me out first',
+    'Btw Hey its me ',
+    'Marwa :)',
+    'There are 8 Billion people on earth',
+'Yet I have met you ', 
+'But why you ?', 
+'The simple answer is :', 
+'I dont know', 
+'I dont know for how much we will know each other ',
+'A year ?','A decade ?', 'An age ?', 'Who cares .. ', 
+
+'Since you are one year closer to your death',  'I had much ideas about what I can offer you in this tragic day ', 
+'And I forgot that the real present is ..',
+'YOU', 
+'Yes', ' Yourself', 'The one you built', 
+
+'Dear UKI',
+'No matter what can go wrong',
+'I will always believe in you', 
+'Why ?', 
+'Because I want to ',
+'Do you mind huh ?! Lol',
+
+
+
+'Alright alright',
+' I will be straight to the point',
+'I thought of offering you money but it is meaningless in this situation',
+'There is that dream of yours',
+'Being a famous artist',
+'Like your Davinke maybe',
+'I know you would want your own art gallery one day',
+'Unfortunaly , I dont have the capacity to make this happen ',
+'But I can make your dream happen in the digital world :)',
+'Now You can open your card ! ',
+'I will repeat the script in case you want to reread it',
+
+
+  ];
+  
+  let currentIndex = 0;
+  let offset = 0;
+  const sentenceElement = document.querySelector('.sentence');
+  let forwards = true;
+  let skipCount = 0;
+  const skipDelay = 15;
+  const speed = 75;
+
+  const updateSentence = () => {
+    sentenceElement.textContent = sentences[currentIndex].substring(0, offset);
+  };
+
+  const handleAnimation = () => {
+    if (forwards) {
+      if (offset >= sentences[currentIndex].length) {
+        if (++skipCount === skipDelay) {
+          forwards = false;
+          skipCount = 0;
+        }
+      }
+    } else if (offset === 0) {
+      forwards = true;
+      currentIndex = (currentIndex + 1) % sentences.length;
+    }
+
+    if (skipCount === 0) {
+      forwards ? offset++ : offset--;
+    }
+
+    updateSentence();
+  };
+
+  setInterval(handleAnimation, speed);
+});
+</script>
+
+
+</body>
+</html>
+
+
